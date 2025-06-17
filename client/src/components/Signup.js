@@ -164,9 +164,9 @@ export default function Signup(props) {
                     <p className="text-white text-lg sm:text-2xl px-4 sm:px-0">Welcome! Enter Your Details And Experience</p>
                     <p className="text-white text-lg sm:text-2xl px-4 sm:px-0">Graphical Password System.</p><br/>
                     <div className="flex flex-col w-[80%] sm:w-2/3 px-4 sm:px-0">
-                        <input value={signupInfo.username} onChange={handleChange} name="username" className="rounded-full h-8 sm:h-12 px-6 font-3xl" type="text" placeholder="Username"/>
-                        <input value={signupInfo.email} onChange={handleChange} name="email" className="rounded-full h-8 sm:h-12 px-6 font-3xl mt-4" type="email" placeholder="Email"/>
-                        <input value={signupInfo.password} onChange={handleChange} name="password" className="rounded-full h-8 sm:h-12 px-6 font-3xl mt-4" type="password" placeholder="Password"/>
+                        <input value={signupInfo.username} onChange={handleChange} name="username" className="input-field h-12 px-6 text-lg" type="text" placeholder="Username"/>
+                        <input value={signupInfo.email} onChange={handleChange} name="email" className="input-field h-12 px-6 text-lg mt-4" type="email" placeholder="Email"/>
+                        <input value={signupInfo.password} onChange={handleChange} name="password" className="input-field h-12 px-6 text-lg mt-4" type="password" placeholder="Password"/>
                     </div>
                     <button onClick={handleNextClick} className="ml-4 sm:ml-0 transition duration-500 ease-in-out h-8 sm:h-12 bg-[#A259FF] rounded-full px-6 sm:w-2/3 mt-6 text-white border-2 hover:bg-transparent border-[#A259FF] font-bold">Next</button>
                 </div>
@@ -190,12 +190,17 @@ export default function Signup(props) {
                     <br/>
                     {iteration === 0 && <div className="align-middle items-center">
                         <p className="text-white text-2xl">Type Keyword: </p>
-                        <div className=" rounded-lg flex mt-2">
-                            <input onChange={(event) => setKeyword(event.target.value)} value={keyword}
-                                   placeholder="Try 'Cats'" className="rounded-l-md px-4 bg-gray-100 text-2xl py-1"/>
+                        <div className="rounded-lg flex mt-2">
+                            <input 
+                                onChange={(event) => setKeyword(event.target.value)} 
+                                value={keyword}
+                                placeholder="Try 'Cats'" 
+                                className="input-field rounded-l-lg px-4 text-lg py-1"
+                            />
                             <button onClick={searchKeyword}
-                                    className="bg-gray-100 transition duration-500 ease-in-out rounded-r-lg px-4 h-12 hover:bg-gray-300">
-                                <FontAwesomeIcon className="text-black" icon={faSearch}/></button>
+                                className="btn-primary rounded-r-lg px-4 h-12">
+                                <FontAwesomeIcon className="text-white" icon={faSearch}/>
+                            </button>
                         </div>
                     </div>}
                     <button onClick={createAccount} className="transition duration-500 ease-in-out h-12 bg-[#A259FF] rounded-full px-6 w-2/3 mt-12 text-white border-2 hover:bg-transparent border-[#A259FF] font-bold">{getButtonTitle()}</button>
@@ -212,12 +217,17 @@ export default function Signup(props) {
                     <br/>
                     {iteration === 0 && <div className="align-middle items-center">
                         <p className="text-white text-lg">Type Keyword: </p>
-                        <div className=" rounded-md flex mt-2">
-                            <input onChange={(event) => setKeyword(event.target.value)} value={keyword}
-                                   placeholder="Try 'Cats'" className="rounded-l-md px-2 bg-gray-100 h-8 text-lg py-0"/>
+                        <div className="rounded-lg flex mt-2">
+                            <input 
+                                onChange={(event) => setKeyword(event.target.value)} 
+                                value={keyword}
+                                placeholder="Try 'Cats'" 
+                                className="input-field rounded-l-lg px-4 text-lg py-1"
+                            />
                             <button onClick={searchKeyword}
-                                    className="bg-gray-100 transition duration-500 ease-in-out rounded-r-lg px-4 h-8 hover:bg-gray-300">
-                                <FontAwesomeIcon className="text-black" icon={faSearch}/></button>
+                                className="btn-primary rounded-r-lg px-4 h-12">
+                                <FontAwesomeIcon className="text-white" icon={faSearch}/>
+                            </button>
                         </div>
                     </div>}
 
