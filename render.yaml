@@ -2,8 +2,11 @@ services:
   - type: web
     name: graphical-password-backend
     env: node
-    buildCommand: npm install && cd server && npm install
-    startCommand: npm start
+    buildCommand: |
+      npm install
+      cd server && npm install
+      cd ../client && npm install
+    startCommand: cd server && npm start
     envVars:
       - key: NODE_ENV
         value: production
@@ -12,4 +15,10 @@ services:
       - key: JWT_SECRET
         sync: false
       - key: PORT
-        value: 8080 
+        value: 8080
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false 
