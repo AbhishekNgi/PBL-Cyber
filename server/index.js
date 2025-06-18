@@ -40,8 +40,8 @@ const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/graphi
 mongoose.connect(MONGODB_URI)
     .then(() => {
         console.log('MongoDB Connected')
-        app.listen(process.env.PORT || 5000)
-        console.log("Server running...")
+        const PORT = process.env.PORT || 8080;
+        app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
     })
     .catch(err => console.error('MongoDB Connection Error:', err))
 
